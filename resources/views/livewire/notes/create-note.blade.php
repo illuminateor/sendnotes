@@ -36,8 +36,9 @@ new class extends Component {
         <x-textarea wire:model="noteBody" label="Your Note" placeholder="Share all your thoughts with your friend"/>
         <x-input wire:model="noteRecipient" icon="user" type="email" label="Recipient" placeholder="yourfriend@email.com"/>
         <x-input wire:model="noteSendDate" icon="calendar" type="date" label="Send Date" />
-        <div class="pt-4">
-        <x-button type="submit" primary right-icon="calendar" spinner>Schedule Note</x-button>
+        <div class="pt-4 flex justify-between">
+            <x-button icon="arrow-left" class="mb=8" href="{{ route('notes.index') }}" flat negative>Back to Notes</x-button>
+            <x-button type="submit" primary right-icon="calendar" spinner="submit">Schedule Note</x-button>
         </div>
         <x-errors />
     </form>
